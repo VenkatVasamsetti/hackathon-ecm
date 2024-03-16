@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.3'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id "com.microsoft.azure.azurewebapp" version "1.7.1"
 }
 
 group = 'com.wf.ecm.resume.'
@@ -24,4 +25,11 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+azurewebapp {
+	subscription = '6b7f3b54-1a0d-4419-8816-b36ed82d58c5'
+	resourceGroup = 'Team-215'
+	appName = 'ecm-rangers-app'
+	pricingTier = 'P1v2'
+	region = 'westus'
 }
